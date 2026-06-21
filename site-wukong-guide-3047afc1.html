@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>悟空体育 · 轻量导航介绍页</title>
+  <style>
+    /* 极简留白 · 窄版心 · 清晰层级 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f8f9fb;
+      color: #1e2228;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      padding: 0 1.5rem;
+    }
+
+    .page-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 0 3rem;
+    }
+
+    /* ---------- 导航 ---------- */
+    .site-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6rem 0 1.8rem;
+      border-bottom: 1px solid #e6eaef;
+    }
+
+    .site-name {
+      font-weight: 500;
+      font-size: 1.3rem;
+      letter-spacing: 0.5px;
+      color: #1e2a3a;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #3b4a5c;
+      text-decoration: none;
+      font-size: 0.95rem;
+      padding: 0.2rem 0;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .nav-links a:hover {
+      border-bottom-color: #1e2a3a;
+    }
+
+    /* ---------- hero / 标题区 ---------- */
+    .hero {
+      margin: 2.8rem 0 2.4rem;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      letter-spacing: -0.3px;
+      line-height: 1.2;
+      margin-bottom: 0.8rem;
+      color: #0a121c;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: #3d4a5a;
+      max-width: 580px;
+    }
+
+    /* ---------- 正文卡片 ---------- */
+    .section-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 1.8rem 2rem;
+      margin: 2.5rem 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02), 0 1px 2px rgba(0,0,0,0.03);
+    }
+
+    .section-card h2 {
+      font-weight: 500;
+      font-size: 1.3rem;
+      letter-spacing: -0.2px;
+      margin-bottom: 1rem;
+      color: #1e2a3a;
+      border-left: 3px solid #d0d8e0;
+      padding-left: 0.8rem;
+    }
+
+    .section-card p, .section-card li {
+      font-size: 0.96rem;
+      color: #314051;
+      margin-bottom: 0.6rem;
+    }
+
+    .section-card ul {
+      padding-left: 1.2rem;
+      list-style: disc;
+    }
+
+    .section-card ul li::marker {
+      color: #8f9db0;
+    }
+
+    /* ---------- 三场景模块 (卡片变体) ---------- */
+    .scene-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin: 2rem 0;
+    }
+
+    .scene-item {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 1.2rem 1.6rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+      border: 1px solid #edf1f7;
+      transition: box-shadow 0.2s;
+    }
+
+    .scene-item:hover {
+      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    }
+
+    .scene-item h3 {
+      font-weight: 500;
+      font-size: 1.05rem;
+      margin-bottom: 0.4rem;
+      color: #1f2c3c;
+    }
+
+    .scene-item p {
+      font-size: 0.9rem;
+      color: #495b6e;
+      margin: 0;
+    }
+
+    /* ---------- 常见说明 / FAQ 摘要 ---------- */
+    .faq-summary {
+      margin: 2rem 0 1.8rem;
+    }
+
+    .faq-summary h2 {
+      font-weight: 500;
+      font-size: 1.15rem;
+      margin-bottom: 1rem;
+      color: #1e2a3a;
+    }
+
+    .faq-item {
+      margin-bottom: 0.9rem;
+      border-bottom: 1px solid #e9edf3;
+      padding-bottom: 0.8rem;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: #2b3d51;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-item span {
+      font-size: 0.9rem;
+      color: #536477;
+    }
+
+    /* ---------- 可信说明 + 链接 ---------- */
+    .trust-note {
+      background: #f2f5fa;
+      border-radius: 12px;
+      padding: 1.5rem 1.8rem;
+      margin: 2.2rem 0;
+      font-size: 0.95rem;
+      color: #2e3f52;
+      line-height: 1.7;
+    }
+
+    .trust-note a {
+      color: #1f2c3c;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-thickness: 1px;
+      text-decoration-color: #b0bcca;
+      transition: text-decoration-color 0.2s;
+    }
+
+    .trust-note a:hover {
+      text-decoration-color: #1f2c3c;
+    }
+
+    /* ---------- 页脚 ---------- */
+    .site-footer {
+      border-top: 1px solid #e6eaef;
+      margin-top: 2.5rem;
+      padding: 1.5rem 0 0.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #6f7d8f;
+    }
+
+    /* ---------- 响应式 ---------- */
+    @media (max-width: 520px) {
+      body {
+        padding: 0 1rem;
+      }
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+      .section-card {
+        padding: 1.2rem 1.2rem;
+      }
+      .nav-links {
+        gap: 0.9rem;
+      }
+      .nav-links a {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <!-- 顶部导航 -->
+  <nav class="site-nav">
+    <span class="site-name">wk体育</span>
+    <ul class="nav-links">
+      <li><a href="#intro">介绍</a></li>
+      <li><a href="#scene">场景</a></li>
+      <li><a href="#faq">说明</a></li>
+    </ul>
+  </nav>
+
+  <!-- hero 区 -->
+  <div class="hero">
+    <h1>悟空体育 · 站点介绍</h1>
+    <p>一份平实的信息页，帮你快速了解这个网站的大致方向以及我们关注的内容领域。</p>
+  </div>
+
+  <!-- 核心介绍 -->
+  <div class="section-card" id="intro">
+    <h2>关于站点</h2>
+    <p><a href="https://site-wukong.com">悟空体育</a> 是一个围绕体育资讯、运动常识与业余赛事记录的小型信息站点。内容涵盖基础规则解析、场地器材说明以及部分民间赛事观察，不涉及任何专业预测、投注引导或违规内容。</p>
+    <p>网站内容由体育爱好者整理汇编，以帮助刚接触某项运动的朋友更快理解基本概念。所有素材均来自公开资料或个人经验，力求清晰、平实、便于查阅。</p>
+  </div>
+
+  <!-- 三个场景模块 -->
+  <h2 style="font-weight:500; font-size:1.15rem; color:#1e2a3a; margin:2.2rem 0 0.8rem;" id="scene">常见使用场景</h2>
+  <div class="scene-grid">
+    <div class="scene-item">
+      <h3>⚽ 规则速查</h3>
+      <p>想快速搞懂越位、违例或计分方式？通过分类标签可以找到简明版规则说明，不用翻阅冗长手册。</p>
+    </div>
+    <div class="scene-item">
+      <h3>🏀 装备与场地</h3>
+      <p>球拍、跑鞋、场地尺寸……这类基础参数经常被新手忽略。网站整理了常见运动的基础配置清单，方便出门前对照。</p>
+    </div>
+    <div class="scene-item">
+      <h3>📋 民间赛事记录</h3>
+      <p>业余联赛、社区杯赛、趣味运动会——这里会不定期收录一些非职业赛事的赛果与简报，纯粹作为存档留念。</p>
+    </div>
+  </div>
+
+  <!-- 常见说明 / FAQ 摘要 -->
+  <div class="faq-summary" id="faq">
+    <h2>常见说明</h2>
+    <div class="faq-item">
+      <strong>内容更新频率如何？</strong>
+      <span>根据业余时间不定期更新，没有固定周期，但会尽量保持每月至少一次内容补充或修正。</span>
+    </div>
+    <div class="faq-item">
+      <strong>信息是否权威？</strong>
+      <span>参考了多个公开来源，但并非官方发布。如果发现和正式规则有出入，欢迎通过站内渠道反馈，我们会尽快核实调整。</span>
+    </div>
+    <div class="faq-item">
+      <strong>是否有社区或讨论区？</strong>
+      <span>目前没有开放评论或论坛。站点以单向信息展示为主，未来可能会增加简单的联系入口。</span>
+    </div>
+  </div>
+
+  <!-- 可信说明 + 指向悟空体育的链接（自然嵌入句子） -->
+  <div class="trust-note">
+    <p>本站由个人爱好者维护，不涉及商业运营或用户数据收集。所有内容仅供一般性参考，如果你希望了解更多专业信息，可以访问 <a href="https://site-wukong.com">悟空体育</a> 参考相应板块。我们坚持用克制的语气传递真实、可查证的信息，不夸大、不诱导。</p>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    <span>悟空体育 · 轻量导航式介绍页 · 内容仅供一般参考</span>
+  </footer>
+
+</div>
+
+</body>
+</html>
